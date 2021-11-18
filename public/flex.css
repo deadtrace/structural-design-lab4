@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+:root {
+  --black: #1a1b22;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.header {
+  height: 80px;
+  box-shadow: inset 0px -1px 0px #d1d2d6;
+}
+
+.container {
+  max-width: 1264px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.header .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-link a {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+.other-links {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.action {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.other-links .action + .action {
+  margin-left: 33px;
+}
+
+.other-links button.logout {
+  outline: none;
+  background-color: transparent;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--black);
+  padding: 0 19px;
+  border: 1px solid var(--black) !important;
+  border-radius: 100px;
+  cursor: pointer;
+  width: 112px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-active {
+  box-shadow: inset 0 -3px 0 0 var(--black);
+}
+
+.subheader {
+  padding-top: 40px;
+  padding-bottom: 56px;
+}
+
+.subheader p,
+.subheader h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.subheader .preheader {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+  margin-bottom: 28px;
+}
+
+.subheader h1 {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 30px;
+}
+
+.subheader.keywords {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+.main {
+  background: #f5f6f7;
+  padding: 62px 0;
+}
+
+.card {
+  height: 576px;
+  max-height: 576px;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 400px;
+}
+
+.card-image {
+  min-height: 272px;
+  height: 272px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.card-image .card-tag {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.delete {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+
+.delete-button--hint {
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-right: 5px;
+  opacity: 0;
+  transition-duration: 200ms;
+  cursor: default;
+}
+
+.delete path {
+  transition-duration: 200ms;
+}
+
+#delete-button:hover path {
+  fill: #000000;
+}
+
+#delete-button:hover ~ .delete-button--hint {
+  opacity: 1;
+}
+
+.card-content {
+  height: 304px;
+  max-height: 304px;
+  background-color: white;
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.card-date {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  margin-bottom: 12px;
+}
+
+.card-name {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.card-description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--black);
+}
+
+.card-source {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+  position: absolute;
+  bottom: 24px;
+  left: 20px;
+}
+
+.main .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer {
+  height: 80px;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.footer .copyright {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+}
+
+.footer .footer-links {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1a1b22;
+  display: flex;
+}
+
+.footer .footer-links .main-link {
+  display: block;
+  min-width: 112;
+  width: 112px;
+  cursor: pointer;
+}
+
+.footer .footer-links .yandex-link {
+  display: block;
+  min-width: 192px;
+  width: 192px;
+  cursor: pointer;
+}
+
+.footer-icons {
+  margin-left: 42px;
+}
+
+.footer-icons svg {
+  cursor: pointer;
+}
+
+.footer-icons svg + svg {
+  margin-left: 28px;
+}
+
+.burger {
+  display: none;
+}
+
+.footer-links div {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .other-links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .header {
+    height: 56px;
+  }
+
+  .company-link a {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .subheader {
+    padding-top: 8px;
+    padding-bottom: 32px;
+  }
+
+  .subheader .preheader {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+    margin-bottom: 16px;
+  }
+
+  .subheader h1 {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+
+  .subheader.keywords {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--black);
+  }
+
+  .main {
+    padding: 24px 0;
+  }
+
+  .card {
+    height: auto;
+    min-height: 476px;
+    max-height: unset;
+    width: 100%;
+  }
+
+  .card-image {
+    min-height: 196px;
+    height: 196px;
+    width: 100%;
+  }
+
+  .card-image .card-tag {
+    top: 16px;
+    left: 16px;
+  }
+
+  .delete {
+    top: 16px;
+    right: 16px;
+  }
+
+  .card-content {
+    height: auto;
+    min-height: 280px;
+    max-height: unset;
+    padding: 16px 16px 36px;
+    position: relative;
+  }
+
+  .card-date {
+    margin-bottom: 10px;
+  }
+
+  .card-name {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+
+  .card-source {
+    bottom: 16px;
+    left: 16px;
+    position: absolute;
+  }
+
+  .footer .container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 16px;
+    height: auto;
+    max-height: unset;
+  }
+
+  .footer-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-links div {
+    flex-direction: column;
+  }
+
+  .footer-links .yandex-link,
+  .footer-links .main-link {
+    text-align: start;
+  }
+
+  .footer-links .yandex-link {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .footer-links .footer-icons {
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+  }
+}
