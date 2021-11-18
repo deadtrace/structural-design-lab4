@@ -4,6 +4,10 @@ const path = require("path");
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", function (req, res) {
+  res.send("Go to /flex or /grid");
+});
+
 app.get("/flex", function (req, res) {
   res.sendFile(path.join(__dirname, "public", "flex.html"));
 });
@@ -13,5 +17,3 @@ app.get("/grid", function (req, res) {
 });
 
 app.listen(process.env.port || 3000);
-
-console.log("Running at Port 3000");
