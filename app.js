@@ -16,4 +16,4 @@ app.get("/grid", function (req, res) {
   res.sendFile(path.join(__dirname, "public", "grid.html"));
 });
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.PORT || 3000);
